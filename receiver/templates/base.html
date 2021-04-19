@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'base_style.css' %}" />
+
+</head>
+
+<body>
+    <div class="header">
+        <h1 style="text-align:center; font-size:  50px; flex: 60%;">Covid Help Desk</h1>
+        <div class="header-right">
+            <a class="active" href="/">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="#feedback">Feedback</a>
+        </div>
+
+    </div>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="footer">
+            <p class="w">
+            <h1>By the people. For the people.</h1>
+            <h2> &copy; 2021 This is a genuine attempt by a group of students to serve the society.</h2>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

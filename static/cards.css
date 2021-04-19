@@ -1,0 +1,201 @@
+.selection_box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Regiondropdown {
+    margin: 10px;
+    padding: 10px;
+}
+
+.Regiondropdown option {
+    margin: 20px;
+    padding: 20px;
+}
+
+#SelectRegion {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(204, 204, 204);
+    box-shadow: 0 3px 1rem rgb(0 0 0 / 20%);
+}
+
+.Requirementdropdown {
+    margin: 10px;
+    padding: 10px;
+}
+
+#SelectRequirement {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(204, 204, 204);
+    box-shadow: 0 3px 1rem rgb(0 0 0 / 20%);
+}
+
+#LabelText {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-size: 30px;
+}
+
+#Options {
+    background-color: rgb(204, 204, 204);
+    font-size: 20px;
+}
+.resources_button {
+    margin: 10px;
+    padding: 10px;
+}
+
+#CommonResources {
+    height: 80px;
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    color: rgb(49, 49, 49);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 3px 1rem rgb(0 0 0 / 20%);
+    cursor: pointer;
+}
+
+.resources_button button:hover {
+    background-color: #464646;
+    color: rgb(241, 241, 241);
+}
+
+.whole_card {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.whole_card ul {
+    margin-top: -20px;
+    margin-bottom: -20px;
+    padding: 10px;
+    line-height: 1px;
+}
+
+.whole_card p {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.card1,
+.card2,
+.card3 {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px rgb(211, 211, 211) solid;
+    border-radius: 15px;
+    box-shadow: 2px 2px 9px rgb(182, 182, 182);
+}
+
+.State {
+    height: 78px;
+    background: rgb(250, 127, 96);
+    color: white;
+    text-align: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+.container {
+    padding: 12px;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 1400px) {
+    .whole_card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .whole_card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 666px) {
+    .whole_card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .selection_box {
+        margin: 40px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+    .Regiondropdown {
+        font-size: 20px;
+    }
+    .Requirementdropdown {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .selection_box {
+        margin-left: -10px;
+        margin-bottom: 150px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+    .Regiondropdown {
+        font-size: 20px;
+    }
+    .Requirementdropdown {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .selection_box {
+        margin-left: -10px;
+        margin-bottom: 280px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+    .Regiondropdown {
+        font-size: 20px;
+    }
+    .Requirementdropdown {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .selection_box {
+        height: 150px;
+        margin-left: -10px;
+        margin-bottom: 240px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+    .Regiondropdown {
+        font-size: 10px;
+    }
+    .Requirementdropdown {
+        font-size: 10px;
+    }
+}
