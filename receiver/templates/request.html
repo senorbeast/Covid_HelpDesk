@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'req.css' %}" type="text/css" />
+<div class="container">
+  <div class="imgdiv2">
+    <img src="{% static 'reqicon.png' %}" alt="">
+  </div>
+  <div class="Title">Request Form</div>
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name">
+    <label for="location">Location</label>
+    <input type="text" id="lname" name="location" placeholder="Your Location / Your Hospital">
+    <label for="location">Contact Number</label>
+    <input type="number" id="contact" name="contact" placeholder="Your Contact Number">
+
+    <label for="state">Region</label>
+    <select id="state" name="State">
+      <optgroup label="Maharashtra"
+        style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;"></optgroup>
+      <option value="Mumbai">&nbsp;&nbsp;&nbsp;&nbsp;Mumbai</option>
+      <optgroup label="New Delhi"
+        style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;"></optgroup>
+      <option value="Delhi">&nbsp;&nbsp;&nbsp;&nbsp;Delhi</option>
+      <optgroup label="West Bengal"
+        style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;"></optgroup>
+      <option value="Kolkata">&nbsp;&nbsp;&nbsp;&nbsp;Kolkata</option>
+      <optgroup label="Karnataka"
+        style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;">
+        &nbsp;&nbsp;&nbsp;&nbsp;Karnataka</optgroup>
+      <option value="Bangalore">&nbsp;&nbsp;&nbsp;&nbsp;Bangalore</option>
+      <optgroup label="Madhya Pradesh"
+        style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;">
+        &nbsp;&nbsp;&nbsp;&nbsp;Madhya Pradesh</optgroup>
+      <option value="Bhopal">&nbsp;&nbsp;&nbsp;&nbsp;Bhopal</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Submit your requirements only" style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}

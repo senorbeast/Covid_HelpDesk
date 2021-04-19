@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Red+Hat+Display:wght@400;500&display=swap");
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("reqwide.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+* {
+    box-sizing: border-box;
+}
+
+.imgdiv2 img {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 100px;
+}
+.imgdiv2 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -70px;
+}
+
+.Title {
+    display: flex;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 40px;
+    padding: 20px;
+    font-weight: lighter;
+}
+
+label {
+    font-family: Oxygen;
+    font-size: 17px;
+}
+
+textarea {
+    font-family: Oxygen;
+    font-size: 15px;
+}
+
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(9, 59, 88, 0.87);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type="text"],
+select,
+textarea {
+    font-family: Oxygen;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(9, 59, 88, 0.87);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    font-family: Oxygen;
+    background-color: #009e42;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    color: blanchedalmond;
+    background-color: #008337;
+    font-size: medium;
+    font-family: Oxygen;
+}
+
+.container {
+    border-radius: 10px;
+    box-shadow: 0 5px 1rem rgb(92, 92, 92);
+    background-color: rgba(5, 48, 73, 0.87);
+    color: rgb(241, 241, 241);
+    margin: 5% auto 15% auto;
+    width: 40%;
+    padding: 20px;
+}
+.credits {
+    font-family: Oxygen;
+    font-size: 14px;
+    margin-left: 87%;
+    content: "Photo by Scott Webb from Pexels";
+}
+@media only screen and (max-width: 1300px) {
+    body {
+        background-image: url("reqn.jpg");
+        background-color: rgba(114, 173, 240, 0.87);
+    }
+    head {
+        margin: 30px;
+    }
+    .container {
+        width: 50%;
+        margin-top: 80px;
+        background-color: rgba(5, 48, 73, 0.87);
+    }
+
+    .credits span {
+        display: none;
+        visibility: hidden;
+        margin-left: 75%;
+    }
+
+    .credits p {
+        display: none;
+    }
+
+    .credits:after {
+        content: "Photo by Dorothy Castillo from Pexels";
+    }
+}

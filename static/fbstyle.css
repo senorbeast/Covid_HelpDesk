@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Red+Hat+Display:wght@400;500&display=swap");
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("fbwide.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+* {
+    box-sizing: border-box;
+}
+
+.imgdiv img {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 100px;
+}
+.imgdiv {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -70px;
+}
+
+.Title {
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 40px;
+    padding: 20px;
+    justify-content: center;
+    font-weight: lighter;
+}
+
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(9, 59, 88, 0.87);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type="text"],
+select,
+textarea {
+    font-family: Oxygen;
+    font-size: 15px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(9, 59, 88, 0.87);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    font-family: Oxygen;
+    font-size: 15px;
+    background-color: #0ace5c;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    color: blanchedalmond;
+    background-color: #008337;
+}
+
+.container {
+    font-family: Oxygen;
+    font-size: 17px;
+    border-radius: 10px;
+    box-shadow: 0 5px 1rem rgb(92, 92, 92);
+    background-color: rgba(5, 48, 73, 0.87);
+    color: rgb(241, 241, 241);
+    margin: 5% auto 15% auto;
+    width: 40%;
+    padding: 20px;
+}
+
+.credits {
+    font-family: Oxygen;
+    font-size: 14px;
+    margin-left: 87%;
+}
+
+@media only screen and (max-width: 1300px) {
+    body {
+        background-image: url("pexels-scott-webb-1029615.jpg");
+        height: 100vh;
+        background-color: rgba(114, 173, 240, 0.87);
+    }
+    .container {
+        width: 50%;
+        background-color: rgba(5, 48, 73, 0.87);
+        margin-top: 80px;
+    }
+
+    .credits {
+        margin-left: 75%;
+    }
+}

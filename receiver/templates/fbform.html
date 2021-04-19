@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'fbstyle.css' %}" type="text/css" />
+
+<div class="container">
+  <div class="imgdiv">
+    <img src="{% static 'fbicon.jpg' %}" alt="">
+  </div>
+  <div class="Title">Feedback Form</div>
+  <form action="/action_page.php">
+
+    <label for="location">Contact Number</label>
+    <input type="number" id="contact" name="contact" placeholder="Your Contact Number">
+
+
+    <label for="subject">Suggestions</label>
+    <textarea id="subject" name="subject" placeholder="Write suggestions" style="height:200px"></textarea>
+    <label for="subject">Any Misconduct</label>
+    <textarea id="subject" name="subject" placeholder="Please write what difficulty you faced"
+      style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}

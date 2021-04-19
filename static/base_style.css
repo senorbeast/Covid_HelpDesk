@@ -49,7 +49,7 @@ head {
 .footer {
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     background-color: rgb(187, 187, 187);
     color: rgb(26, 26, 26);
     text-align: center;

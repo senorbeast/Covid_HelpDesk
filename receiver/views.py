@@ -16,6 +16,10 @@ def posts(request):
     return render(request, 'posts.html', {'posts': posts})
 
 
+def add_rhelp(request):
+    return render(request, 'helpingH.html')
+
+
 def add_post(request):
     # if request.method == 'POST':
     #     #form = RequestForm(request.POST)
@@ -27,4 +31,8 @@ def add_post(request):
     #         query = Needy(name=name, pub_date=pub_date,
     #                       req=req, state_choice=state_choice)
     #         query.save()
-    return render(request, 'contact.html')
+    return render(request, 'request.html')
+
+
+def fbform(request):
+    return render(request, 'fbform.html')
