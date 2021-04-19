@@ -1,7 +1,6 @@
 from django.db import models
 import datetime
 from django.utils import timezone
-from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 
 
@@ -13,7 +12,7 @@ class Resource(models.Model):
     contact_name = models.CharField(default='', max_length=200)
     email_id = models.CharField(default='', max_length=200)
     phone = models.CharField(default='', max_length=200)
-    last_updated = models.DateTimeField('date published')
+    last_updated = models.DateField('last updated')
 
 
 class Needy(models.Model):
@@ -23,7 +22,7 @@ class Needy(models.Model):
     req = models.CharField(default='', max_length=200)
     state = models.CharField(default='', max_length=200)
     city = models.CharField(default='', max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateField('date published')
 
     def __str__(self):
         return self.name
