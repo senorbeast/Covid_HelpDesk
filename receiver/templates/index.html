@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+<!-- {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'posts.css' %}" /> -->
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}" type="text/css" />
+<div class="about-section">
+  <h1>About Us</h1>
+  <p>Some text about who we are and what we do.</p>
+  <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+<h2 style="text-align:center">You can find something here</h2>
+<div class="col-container">
+  <div class="col">
+    <h2 id="Heading">Need Help</h2>
+    <p id="InsideInfo">You are in need of COVID resources you can find them here</p>
+    <br>
+    <a href="#resources" style="text-decoration: none; color: white;">
+      <button class="button">Resources</button></a>
+  </div>
+
+  <div class="col">
+    <h2>Add Requirement</h2>
+    <p>If you still couldn't find what you wanted you can add your requirements here. Someone will contact you if they
+      can help you</p>
+
+    <a href="#addRequirements" style="text-decoration: none; color: white;">
+      <button class="button">Add Requirement</button> </a>
+  </div>
+
+  <div class="col">
+    <h2>Want to help</h2>
+    <p>If you want to help others then you can click below to see who has what all requirements.</p>
+    <br>
+    <a href="#helpOthers" style="text-decoration: none; color: white;">
+      <button class="button">Help Others</button> </a>
+  </div>
+
+  <div class="col">
+    <h2>Want to help in other ways</h2>
+    <p>If you want to help others but you have something else to help. You can add your resources here.</p>
+    <a href="#addResources" style="text-decoration: none; color: white;">
+      <button class="button">Add Your Resources</button> </a>
+  </div>
+</div>
+{% endblock %}

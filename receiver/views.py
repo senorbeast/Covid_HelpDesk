@@ -1,7 +1,18 @@
+from django.http import Http404
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .models import Needy
 # Create your views here.
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'index.html')
+
+
+def posts(request):
+    posts = Needy.objects.all()
+    return render(request, 'posts.html', {'posts': posts})
+
+
+def add_post(request):
+    return render(request, 'contact.html')
