@@ -1,8 +1,15 @@
 from django import forms
+from .models import Resource, Needy
 
 
-# class RequestForm(forms.Form):
-#     name = forms.CharField(max_length=200)
-#     pub_date = forms.DateTimeField('date published')
-#     req = forms.CharField(default='', max_length=200)
-#     state_choice = forms.CharField(default='', max_length=200)
+class HelpForm(forms.ModelForm):
+    class Meta:
+        model = Resource
+        fields = ['contact_name', 'email_id', 'phone', 'state', 'description']
+
+
+class NeedForm(forms.ModelForm):
+    class Meta:
+        model = Needy
+        fields = ['name', 'email_id', 'phone',
+                  'state', 'description']
