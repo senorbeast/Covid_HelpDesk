@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Red+Hat+Display:wght@400;500&display=swap");
-body,
-head {
-    height: 100%;
-    margin: 0;
-    margin: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fffcf3;
+head,
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(228, 226, 226);
+    justify-content: center;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .header {
@@ -60,4 +61,18 @@ head {
     margin-right: -30px;
     margin-top: 20px;
     margin-bottom: -30px;
+}
+@media only screen and (max-width: 780px) {
+    head,
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color: rgb(29, 29, 29);
+        justify-content: center;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .contact {
+        font-size: 30px;
+    }
 }

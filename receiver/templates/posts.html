@@ -1,9 +1,7 @@
 {% extends 'base.html'%}
-<!-- {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'posts.css' %}" /> -->
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'cards.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/cards.css' %}" type="text/css" />
 <div class="selection_box">
     <div class="Regiondropdown">
         <div id="SelectRegion">
@@ -32,10 +30,9 @@
         <div id="SelectRequirement">
             <label id="LabelText">Select Requirements:</label>
             <select id="Options">
-                <option>Remdesivir</option>
-                <option>Plasma & Blood</option>
-                <option>Beds</option>
-                <option>Oxygen Tanks</option>
+                {% for res in res_type %}
+                <option>{{res}} </option>
+                {% endfor %}
             </select>
         </div>
     </div>
@@ -50,10 +47,10 @@
             <h2>State: Maharashtra</h2>
         </div>
         <div class="container">
-            <p>Location:{{post.state_choice}}</p>
-            <p>Contact Number: </p>
+            <p>Location:{{post.state}}</p>
+            <p>Contact Number:{{post.phone}} </p>
             <p>Name: {{post.name}}</p>
-            <p>Requirement:{{post.req}}
+            <p>Requirement:{{post.description}}
             </p>
             <p>Status: </p>
         </div>

@@ -1,0 +1,193 @@
+.Title {
+    color: rgb(255, 253, 246);
+    align-self: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 70px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section2 {
+    background-color: rgb(54, 54, 54);
+    color: rgb(255, 253, 245);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    width: calc(100% - 450px);
+    padding-bottom: 90px;
+    margin-bottom: 20px;
+}
+
+.about {
+    margin: 40px;
+    padding: 20px;
+    padding-top: -30px;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.about h2 {
+    margin-bottom: -20px;
+}
+
+.about p {
+    margin-bottom: -80px;
+}
+
+.contact {
+    background-color: rgb(54, 54, 54);
+    color: rgb(255, 253, 245);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    width: calc(100% - 530px);
+    padding-bottom: 90px;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+
+.contact h2 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 176, 29);
+    margin-bottom: -15px;
+    font-size: 43px;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.contact p {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    margin-left: 20px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+}
+
+@media only screen and (max-width: 1500px) {
+    .section2 {
+        background-color: rgb(54, 54, 54);
+        color: rgb(255, 253, 245);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+        width: calc(100% - 250px);
+    }
+    .contact {
+        background-color: rgb(54, 54, 54);
+        color: rgb(255, 253, 245);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+        width: calc(100% - 330px);
+        padding-bottom: 90px;
+        margin-bottom: 20px;
+        padding: 40px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .section2 {
+        background-color: rgb(54, 54, 54);
+        color: rgb(255, 253, 245);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+        width: calc(100% - 120px);
+    }
+
+    .contact {
+        background-color: rgb(54, 54, 54);
+        color: rgb(255, 253, 245);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+        width: calc(100% - 200px);
+        padding-bottom: 90px;
+        margin-bottom: 20px;
+        padding: 40px;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .contact {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .contact h2 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(255, 176, 29);
+        margin-bottom: -15px;
+        font-size: 33px;
+        margin-top: -10px;
+        margin-left: 0px;
+    }
+
+    .contact p {
+        font-size: 20px;
+        margin-left: 0px;
+    }
+
+    .contact a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .contact {
+        font-size: 30px;
+    }
+
+    .about {
+        margin: 20px;
+        padding: 20px;
+        padding-top: -30px;
+        font-size: 17px;
+        justify-content: center;
+    }
+    .section2 {
+        padding-top: -15px;
+        padding-bottom: 65px;
+    }
+
+    .contact h2 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(255, 176, 29);
+        margin-bottom: -15px;
+        font-size: 33px;
+        margin-top: -10px;
+        margin-left: 0px;
+    }
+
+    .contact p {
+        font-size: 20px;
+        margin-left: 0px;
+    }
+
+    .contact a {
+        font-size: 20px;
+    }
+}

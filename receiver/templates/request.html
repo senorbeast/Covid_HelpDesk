@@ -1,16 +1,16 @@
 {% extends 'base.html'%}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'req.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/req.css' %}" type="text/css" />
 <div class="container">
   <div class="imgdiv2">
-    <img src="{% static 'reqicon.png' %}" alt="">
+    <img src="{% static 'images/reqicon.png' %}" alt="">
   </div>
   {% if msg %}
   <div class="message">{{msg}} </div>
   {% endif %}
   <div class="Title">Request Form</div>
-  <form method="POST" action="{% url 'addpost' %}">
+  <form method="POST" id='requestF' data-cities-url="{% url 'ajax_load_cities' %}">
     {% csrf_token %}
     <label for="fname">Name</label>
     <input type="text" id="fname" name="name" placeholder="Enter your Full name" required>
@@ -18,19 +18,46 @@
     <input type="text" id="lname" name="email_id" placeholder="Enter your Email ID" required>
     <label for="location">Contact Number</label>
     <input type="text" id="contact" name="phone" placeholder="Enter your contact number" required>
-    <label for="state">Region</label>
-    <select id="state" name="state">
-      <!-- <optgroup label="Maharashtra"
-            style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;"></optgroup>
-          <option value="Mumbai">&nbsp;&nbsp;&nbsp;&nbsp;Mumbai</option> -->
-      {% for choice,value in state_choices %}
-      <option value="{{ choice }}">{{ value }}</option>
-      {% endfor %}
-    </select>
-    <label for="Your Helping Resources">Your Helping Resources</label>
-    <textarea id="subject" name="description" placeholder="Please describe how you are providing your help. "
+
+    <label for="state">State</label>
+    {{ hhm.state }}
+    <label for="city">City</label>
+    {{ hhm.city }}
+    <label for="res_type">Resource Type</label>
+    {{ hhm.resource_name}}
+
+    <label for="Describe">Describe</label>
+    <textarea id="subject" name="description" placeholder="Please describe the resources you need. "
       style="height:200px"></textarea>
     <input type="submit" value="Submit">
   </form>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_state").change(function () {
+      const url = $("#requestF").attr("data-cities-url");  // get the url of the `load_cities` view
+      const stateId = $(this).val();  // get the selected state ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+        data: {
+          'state_id': stateId       // add the state id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+
+          /*
+          let html_data = '<option value="">---------</option>';
+          data.forEach(function (city) {
+            html_data += `<option value="${city.id}">${city.name}</option>`
+          });
+          console.log(html_data);
+          $("#id_city").html(html_data);
+          
+          */
+        }
+      });
+
+    });
+  </script>
 </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Red+Hat+Display:wght@400;500&display=swap");
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("reqwide.jpg");
+    background-image: url("../images/hhwide.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -15,6 +15,7 @@ body {
     border-radius: 50%;
     width: 100px;
 }
+
 .imgdiv2 {
     display: flex;
     justify-content: center;
@@ -33,12 +34,12 @@ body {
 
 label {
     font-family: Oxygen;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 textarea {
     font-family: Oxygen;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 input[type="number"],
@@ -46,7 +47,8 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid rgba(9, 59, 88, 0.87);
+    /* border: 1px solid rgba(9, 59, 88, 0.87); */
+    border-width: 0px;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
@@ -60,7 +62,8 @@ textarea {
     font-family: Oxygen;
     width: 100%;
     padding: 12px;
-    border: 1px solid rgba(9, 59, 88, 0.87);
+    /* border: 1px solid rgba(9, 59, 88, 0.87); */
+    border-width: 0px;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
@@ -89,30 +92,37 @@ input[type="submit"]:hover {
 .container {
     border-radius: 10px;
     box-shadow: 0 5px 1rem rgb(92, 92, 92);
-    background-color: rgba(5, 48, 73, 0.87);
-    color: rgb(241, 241, 241);
+    background-color: rgba(231, 231, 231, 0.938);
+    color: rgb(14, 14, 14);
     margin: 5% auto 15% auto;
-    width: 40%;
+    width: 35%;
     padding: 20px;
+    margin-left: 50%;
 }
 .credits {
     font-family: Oxygen;
-    font-size: 14px;
+    font-size: 15px;
     margin-left: 87%;
     content: "Photo by Scott Webb from Pexels";
 }
+
 @media only screen and (max-width: 1300px) {
     body {
-        background-image: url("reqn.jpg");
+        background-image: url("../images/hhmobile.jpg");
         background-color: rgba(114, 173, 240, 0.87);
     }
     head {
         margin: 30px;
     }
     .container {
+        border-radius: 10px;
+        box-shadow: 0 5px 1rem rgb(92, 92, 92);
+        background-color: rgba(231, 231, 231, 0.938);
+        color: rgb(14, 14, 14);
+        margin: 5% auto 15% auto;
         width: 50%;
-        margin-top: 80px;
-        background-color: rgba(5, 48, 73, 0.87);
+        padding: 20px;
+        margin-top: 90px;
     }
 
     .credits span {
@@ -126,6 +136,6 @@ input[type="submit"]:hover {
     }
 
     .credits:after {
-        content: "Photo by Dorothy Castillo from Pexels";
+        content: "Photo by Daria Liudnaya from Pexels";
     }
 }
