@@ -49,8 +49,6 @@ def newPostCards(request):  # For filtering with AJAX
 
 def resources(request):
     posts = Resource.objects.all()
-    for p in posts:
-        print(p.verified)
     pf_new = Res_filt()
     if request.method == "POST":
         pf = Res_filt(request.POST)
