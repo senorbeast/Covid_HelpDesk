@@ -12,7 +12,7 @@ class Res_type(models.Model):
         default='', max_length=200, blank=True, null=True)
 
     def __str__(self):
-        return self.resource_name
+        return f"{self.resource_name}, ID: {str(self.id)} "
 
 
 class State(models.Model):
