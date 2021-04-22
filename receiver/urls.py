@@ -11,4 +11,6 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('ajax/load-cities/', views.load_cities,
          name='ajax_load_cities'),  # AJAX
+    path('newpostCards', views.newPostCards,
+         name='newpostCards'),  # AJAX
 ]

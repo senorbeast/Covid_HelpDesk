@@ -7,19 +7,20 @@
   <div class="imgdiv">
     <img src="{% static 'images/fbicon.jpg' %}" alt="">
   </div>
+  {% if msg %}
+  <div class="message">{{msg}} </div>
+  {% endif %}
   <div class="Title">Feedback Form</div>
-  <form action="/action_page.php">
 
+  <form method="POST" id='fbform' action="{% url 'fbform' %}">
+    {% csrf_token %}
     <label for="location">Contact Number</label>
-    <input type="number" id="contact" name="contact" placeholder="Your Contact Number">
-
-
+    <input type="number" id="contact" name="phone" placeholder="Your Contact Number">
     <label for="subject">Suggestions</label>
-    <textarea id="subject" name="subject" placeholder="Write suggestions" style="height:200px"></textarea>
+    <textarea id="subject" name="suggest" placeholder="Write suggestions" style="height:200px"></textarea>
     <label for="subject">Any Misconduct</label>
-    <textarea id="subject" name="subject" placeholder="Please write what difficulty you faced"
+    <textarea id="subject" name="any_misconduct" placeholder="Please write what difficulty you faced"
       style="height:200px"></textarea>
-
     <input type="submit" value="Submit">
   </form>
 </div>

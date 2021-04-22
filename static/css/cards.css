@@ -42,7 +42,11 @@
     font-size: 30px;
 }
 
-#Options {
+#state_op #city_op #res_op {
+    background-color: rgb(204, 204, 204);
+    font-size: 20px;
+}
+.state_op .city_op .res_op {
     background-color: rgb(204, 204, 204);
     font-size: 20px;
 }

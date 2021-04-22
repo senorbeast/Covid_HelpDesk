@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'receiver.apps.ReceiverConfig',
-    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +123,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+USE_DJANGO_JQUERY = True
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # MEDIA_URL = '/media/'

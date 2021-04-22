@@ -2,59 +2,146 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/cards.css' %}" type="text/css" />
-<div class="selection_box">
+<div class="selection_box" method="POST" id='postN' data-cities-url="{% url 'ajax_load_cities' %}"
+    post-cards-url="{% url 'newpostCards' %}">
+    {% csrf_token %}
     <div class="Regiondropdown">
         <div id="SelectRegion">
-            <label id="LabelText">Choose a region:</label>
-            <select id="Options">
-                <optgroup label="Mumbai">
-                    <option id="OptionText">Bhandup</option>
-                    <option>Byculla</option>
-                    <option>Mulund</option>
-                </optgroup>
-                <optgroup label="Mumbai Suburban">
-                    <option>Thane</option>
-                    <option>Kalyan</option>
-                    <option>Ulhasnagar</option>
-                </optgroup>
-                <optgroup label="Navi Mumbai">
-                    <option>Airoli</option>
-                    <option>Panvel</option>
-                    <option>Belapur</option>
-                </optgroup>
-            </select>
+            <label id="LabelText">Choose State:</label>
+            {{ pf.state }}
+        </div>
+    </div>
+
+    <div class="Regiondropdown">
+        <div id="SelectRegion">
+            <label id="LabelText">Choose city:</label>
+            {{ pf.city }}
         </div>
     </div>
 
     <div class="Requirementdropdown">
         <div id="SelectRequirement">
             <label id="LabelText">Select Requirements:</label>
-            <select id="Options">
-                {% for res in res_type %}
-                <option>{{res}} </option>
-                {% endfor %}
-            </select>
+            {{ pf.resource_name }}
         </div>
+    </div>
+    <div class="resources_button">
+        <button id="show_all">Show all</button>
     </div>
     <div class="resources_button">
         <button id="CommonResources">Common Resources</button>
     </div>
 </div>
-<div class="whole_card">
+<div class="whole_card" id='post_cards'>
     {% for post in posts %}
     <div class="card1">
         <div class="State" style="color: black;">
-            <h2>State: Maharashtra</h2>
+            <h2>State: {{post.state}}</h2>
         </div>
         <div class="container">
-            <p>Location:{{post.state}}</p>
+            <p>Location:{{post.city}}</p>
             <p>Contact Number:{{post.phone}} </p>
             <p>Name: {{post.name}}</p>
-            <p>Requirement:{{post.description}}
+            <p>Requirement:{{post.resource_name}}
             </p>
             <p>Status: </p>
         </div>
     </div>
     {% endfor %}
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#id_state").change(function () {
+        const url = $("#postN").attr("data-cities-url");  // get the url of the `load_cities` view
+        const stateId = $(this).val();  // get the selected state ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'state_id': stateId       // add the state id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+
+                /*
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (city) {
+                  html_data += `<option value="${city.id}">${city.name}</option>`
+                });
+                console.log(html_data);
+                $("#id_city").html(html_data);
+                
+                */
+            }
+        });
+    });
+
+    //* State Select
+
+    $("#id_state").change(function () {
+        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const stateId = $(this).val();  // get the selected state ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'state_id': stateId       // add the state id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
+
+            }
+        });
+    });
+    //* City Select
+
+    $("#id_city").change(function () {
+        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const cityId = $(this).val();  // get the selected state ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'city_id': cityId       // add the state id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
+
+            }
+        });
+    });
+    //* Resource Select
+    $("#id_resource_name").change(function () {
+        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const resource_nameId = $(this).val();  // get the selected state ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'resource_name_id': resource_nameId       // add the state id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
+
+            }
+        });
+    });
+    //* Show All
+    $("#show_all").change(function () {
+        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const show_allId = $(this).val();  // get the selected state ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'show_all_id': show_allId       // add the state id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
+
+            }
+        });
+    });
+
+</script>
 {% endblock %}

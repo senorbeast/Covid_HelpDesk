@@ -1,0 +1,15 @@
+{% for post in posts %}
+<div class="card1">
+    <div class="State" style="color: black;">
+        <h2>State: {{post.state}}</h2>
+    </div>
+    <div class="container">
+        <p>Location:{{post.city}}</p>
+        <p>Contact Number:{{post.phone}} </p>
+        <p>Name: {{post.name}}</p>
+        <p>Requirement:{{post.resource_name}}
+        </p>
+        <p>Status: </p>
+    </div>
+</div>
+{% endfor %}
