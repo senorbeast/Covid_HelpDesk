@@ -9,7 +9,14 @@
         <p>Name: {{post.contact_name}}</p>
         <p>Resource:{{post.resource_name}}
         </p>
-        <p>Status: </p>
+        <p> Web site:{{ post.web_site }} </p>
+        <p>Status: {% if post.verified %}
+            Verified
+            {% else %}
+            Not Verified
+            {% endif %}
+
+        </p>
     </div>
     {% if user.is_authenticated %}
     <div><a href="{% url 'editResource' post.id %}">EDIT</a></div>

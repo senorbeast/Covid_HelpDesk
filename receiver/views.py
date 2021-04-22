@@ -19,6 +19,8 @@ def index(request):
     return render(request, 'main.html')
 
 # Needy posts
+
+
 def posts(request):
     posts = Needy.objects.all()
     pf_new = Post_filt()
@@ -47,6 +49,8 @@ def newPostCards(request):  # For filtering with AJAX
 
 def resources(request):
     posts = Resource.objects.all()
+    for p in posts:
+        print(p.verified)
     pf_new = Res_filt()
     if request.method == "POST":
         pf = Res_filt(request.POST)

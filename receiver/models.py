@@ -19,7 +19,7 @@ class State(models.Model):
     name = models.CharField(max_length=40)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}, ID: {str(self.id)} "
 
 
 class City(models.Model):
@@ -28,7 +28,7 @@ class City(models.Model):
     name = models.CharField(max_length=40)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}, ID: {str(self.id)} "
 
 
 class Resource(models.Model):
