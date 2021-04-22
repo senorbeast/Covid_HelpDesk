@@ -1,8 +1,13 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from .models import Needy, City, Res_type, State
+from .models import Needy, City, Res_type, State, Resource
 from .forms import FeebackForm, HelpForm, NeedForm, Post_filt
+from django.contrib import messages
+
+
+from .forms import UserRegisterForm
+
 #from .forms import RequestForm
 # Create your views here.
 
@@ -98,3 +103,59 @@ def newPostCards(request):
     if show_all_id:
         needies = Needy.objects.get.all()
     return render(request, 'posts_cards.html', {'posts': needies})
+
+
+def resources(request):
+    posts = Resource.objects.all()
+    pf_new = Post_filt()
+    if request.method == "POST":
+        pf = Post_filt(request.POST)
+        return render(request, 'resources.html', {'posts': posts, 'pf': pf})
+    return render(request, 'resources.html', {'posts': posts, 'pf': pf_new})
+
+def editResource(request, pk):
+    if request.method == "POST":
+        res = Resource.objects.get(id=pk)
+        hh = HelpForm(request.POST, instance=res)
+        if hh.is_valid():
+            hh.save()
+            hhm = HelpForm()
+            return render(request, 'editResource.html', {'hhm': hhm, 'msg': 'Help added!'})
+        else:
+            hhm = HelpForm()
+            return render(request, 'editResource.html', {'hhm': hh, 'msg': 'Check for Errors!!!'})
+    else:
+        res = Resource.objects.get(id=pk)
+        hhm = HelpForm(instance=res)
+        name = res.contact_name
+        email = res.email_id
+        phone = res.phone
+        desc = res.description
+
+        context = {
+            'name':name,
+            'hhm':hhm,
+            'email':email,
+            'phone':phone,
+        }
+
+        return render(request, 'editResource.html', context)
+
+def deleteResource(request, pk):
+    res = Resource.objects.get(id=pk)
+    res.delete()
+    return redirect('resources')
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, "Acccount created successfully! You may login now.")
+                
+            return redirect('login')
+            
+    else:
+        form = UserRegisterForm()
+    return render(request, 'register.html', {'form':form})

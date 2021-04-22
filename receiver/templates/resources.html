@@ -41,12 +41,16 @@
         <div class="container">
             <p>Location:{{post.city}}</p>
             <p>Contact Number:{{post.phone}} </p>
-            <p>Name: {{post.name}}</p>
-            <p>Requirement:{{post.resource_name}}
+            <p>Name: {{post.contact_name}}</p>
+            <p>Resource:{{post.resource_name}}
             </p>
             <p>Status: </p>
         </div>
+        {% if user.is_authenticated %}
+        <div><a href="{% url 'editResource' post.id %}">EDIT</a></div>
+        <div><a href="{% url 'deleteResource' post.id %}">DELETE</a></div>
         
+        {% endif %}
     </div>
     {% endfor %}
 </div>
