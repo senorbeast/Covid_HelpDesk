@@ -1,0 +1,20 @@
+{% for post in posts %}
+<div class="card1">
+    <div class="State" style="color: black;">
+        <h2>State: {{post.state}}</h2>
+    </div>
+    <div class="container">
+        <p>Location:{{post.city}}</p>
+        <p>Contact Number:{{post.phone}} </p>
+        <p>Name: {{post.contact_name}}</p>
+        <p>Resource:{{post.resource_name}}
+        </p>
+        <p>Status: </p>
+    </div>
+    {% if user.is_authenticated %}
+    <div><a href="{% url 'editResource' post.id %}">EDIT</a></div>
+    <div><a href="{% url 'deleteResource' post.id %}">DELETE</a></div>
+
+    {% endif %}
+</div>
+{% endfor %}

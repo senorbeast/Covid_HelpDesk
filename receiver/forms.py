@@ -10,6 +10,8 @@ class HelpForm(forms.ModelForm):
         fields = ['contact_name', 'email_id',
                   'phone', 'state', 'city', 'resource_name', 'description']
 
+     # Edits default forms.ModelForm to hide the city options till state is selected and
+    # then filter cities after selecting state
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['city'].queryset = City.objects.none()
@@ -31,6 +33,8 @@ class NeedForm(forms.ModelForm):
         model = Needy
         fields = ['name', 'email_id', 'phone',
                   'state', 'city', 'resource_name', 'description']
+     # Edits default forms.ModelForm to hide the city options till state is selected and
+    # then filter cities after selecting state
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -59,27 +63,20 @@ class Post_filt(forms.ModelForm):
         model = Needy
         fields = ['state', 'city', 'resource_name']
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     #self.fields['city'].queryset = City.objects.none()
 
-    #     if 'state' in self.data:
-    #         try:
-    #             state_id = int(self.data.get('state'))
-    #             self.fields['city'].queryset = City.objects.filter(
-    #                 state_id=state_id).order_by('name')
-    #         except (ValueError, TypeError):
-    #             pass  # invalid input from the client; ignore and fallback to empty City queryset
-    #     elif self.instance.pk:
-    #         self.fields['city'].queryset = self.instance.state.city_set.order_by(
-    #             'name')
+class Res_filt(forms.ModelForm):
+    class Meta:
+        model = Resource
+        fields = ['state', 'city', 'resource_name']
+
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 
     class Meta:
         model = User
-        fields = ['username','email','password1','password2']
+        fields = ['username', 'email', 'password1', 'password2']
+
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(label='Email / Username')

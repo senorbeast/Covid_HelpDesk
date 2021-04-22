@@ -2,8 +2,8 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/cards.css' %}" type="text/css" />
-<div class="selection_box" method="POST" id='postN' data-cities-url="{% url 'ajax_load_cities' %}"
-    post-cards-url="{% url 'newpostCards' %}">
+<div class="selection_box" method="POST" id='resN' data-cities-url="{% url 'ajax_load_cities' %}"
+    post-cards-url="{% url 'newresCards'%}">
     {% csrf_token %}
     <div class="Regiondropdown">
         <div id="SelectRegion">
@@ -49,7 +49,7 @@
         {% if user.is_authenticated %}
         <div><a href="{% url 'editResource' post.id %}">EDIT</a></div>
         <div><a href="{% url 'deleteResource' post.id %}">DELETE</a></div>
-        
+
         {% endif %}
     </div>
     {% endfor %}
@@ -57,7 +57,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
     $("#id_state").change(function () {
-        const url = $("#postN").attr("data-cities-url");  // get the url of the `load_cities` view
+        const url = $("#resN").attr("data-cities-url");  // get the url of the `load_cities` view
         const stateId = $(this).val();  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request
@@ -84,7 +84,7 @@
     //* State Select
 
     $("#id_state").change(function () {
-        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const url = $("#resN").attr("post-cards-url");  // get the url of the `load_cities` view
         const stateId = $(this).val();  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request
@@ -101,7 +101,7 @@
     //* City Select
 
     $("#id_city").change(function () {
-        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const url = $("#resN").attr("post-cards-url");  // get the url of the `load_cities` view
         const cityId = $(this).val();  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request
@@ -117,7 +117,7 @@
     });
     //* Resource Select
     $("#id_resource_name").change(function () {
-        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const url = $("#resN").attr("post-cards-url");  // get the url of the `load_cities` view
         const resource_nameId = $(this).val();  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request
@@ -133,7 +133,7 @@
     });
     //* Show All
     $("#show_all").change(function () {
-        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        const url = $("#resN").attr("post-cards-url");  // get the url of the `load_cities` view
         const show_allId = $(this).val();  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request

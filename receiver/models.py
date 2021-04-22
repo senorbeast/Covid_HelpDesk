@@ -3,6 +3,8 @@ import datetime
 from django.utils import timezone
 # Create your models here.
 
+# Res_type, State, City have one to many relation with Needy and Resource
+
 
 class Res_type(models.Model):
     resource_name = models.CharField(max_length=50)
