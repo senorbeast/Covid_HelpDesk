@@ -36,15 +36,13 @@ def newPostCards(request):  # For filtering with AJAX
     city_id = request.GET.get('city_id')
     resource_name_id = request.GET.get('resource_name_id')
     show_all_id = request.GET.get('show_all_id')
-    if city_id and state_id and resource_name_id:
-        needies = Needy.objects.filter(state_id=state_id).filter(
-            city_id=city_id).filter(resource_name_id=resource_name_id)
-    elif city_id:
-        needies = Needy.objects.filter(city_id=city_id).all()
-    elif resource_name_id:
-        needies = Needy.objects.filter(resource_name_id=resource_name_id).all()
-    elif show_all_id:
-        needies = Needy.objects.get.all()
+    needies = Resource.objects.all()
+    if int(state_id) != 0:
+        needies = needies.filter(state_id=state_id)
+    if int(city_id) != 0:
+        needies = needies.filter(city_id=city_id)
+    if int(resource_name_id) != 0:
+        needies = needies.filter(resource_name_id=resource_name_id)
     return render(request, 'posts_cards.html', {'posts': needies})
 
 # Resources  posts
@@ -61,19 +59,16 @@ def resources(request):
 
 def newResCards(request):  # For filtering with AJAX
     state_id = request.GET.get('state_id')
-    res = Resource.objects.filter(state_id=state_id).all()
     city_id = request.GET.get('city_id')
     resource_name_id = request.GET.get('resource_name_id')
     show_all_id = request.GET.get('show_all_id')
-    if city_id and state_id and resource_name_id:
-        res = Resource.objects.filter(state_id=state_id).filter(
-            city_id=city_id).filter(resource_name_id=resource_name_id)
-    elif city_id:
-        res = Resource.objects.filter(city_id=city_id).all()
-    elif resource_name_id:
-        res = Resource.objects.filter(resource_name_id=resource_name_id).all()
-    elif show_all_id:
-        res = Resource.objects.get.all()
+    res = Resource.objects.all()
+    if int(state_id) != 0:
+        res = res.filter(state_id=state_id)
+    if int(city_id) != 0:
+        res = res.filter(city_id=city_id)
+    if int(resource_name_id) != 0:
+        res = res.filter(resource_name_id=resource_name_id)
     return render(request, 'resource_cards.html', {'posts': res})
 
 
@@ -140,7 +135,9 @@ def about(request):
 
 def load_cities(request):
     state_id = request.GET.get('state_id')
-    cities = City.objects.filter(state_id=state_id).all()
+    cities = City.objects.all()
+    if int(state_id) != 0:
+        cities = cities.filter(state_id=state_id).all()
     return render(request, 'city_dropdown_list_options.html', {'cities': cities})
     # return JsonResponse(list(cities.values('id', 'name')), safe=False)
 
@@ -162,6 +159,7 @@ def editResource(request, pk):
         name = res.contact_name
         email = res.email_id
         phone = res.phone
+        verified = res.verified
         desc = res.description
 
         context = {
@@ -169,6 +167,7 @@ def editResource(request, pk):
             'hhm': hhm,
             'email': email,
             'phone': phone,
+            'desc': desc,
         }
 
         return render(request, 'editResource.html', context)

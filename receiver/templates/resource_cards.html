@@ -20,14 +20,15 @@
         <p>Name: {{post.contact_name}}</p>
         <p>Resource:{{post.resource_name}}
         </p>
-        <p> Web site: <a href="{{post.web_site }} ">{{ post.web_site }}</a> </p>
-        <p>Status:
+        <p> Web site: <a href="{{ post.web_site }} ">{{ post.web_site }}</a> </p>
+        <p>Status: {{ post.description }}
 
         </p>
     </div>
     {% if user.is_authenticated %}
-    <div><a href="{% url 'editResource' post.id %}"><button class="Edit">Edit</button></a></div>
-    <div><a href="{% url 'deleteResource' post.id %}"><button class="Delete">Delete</button></a></div>
+
+    <div class="EdDelVer"><a href="{% url 'editResource' post.id %}"><button class="Edit">Edit</button></a></div>
+    <div class="EdDelVer"><a href="{% url 'deleteResource' post.id %}"><button class="Delete">Delete</button></a></div>
     {% endif %}
 </div>
 {% endfor %}

@@ -27,12 +27,12 @@
     {{ hhm.resource_name}}
 
     <label for="phone">Verified</label>
-    <input type="text" id="verif" name="verified" placeholder="Verified ?" value="{{ verified }}" required>
+    <input type="text" id="verif" name="verified" placeholder="True/False" value="{{ verified }}" required>
 
 
     <label for="Your Helping Resources">Your Helping Resources</label>
     <textarea id="subject" name="description" placeholder="Please describe how you are providing your help. "
-      style="height:200px"></textarea>
+      style="height:200px" value="{{ desc }} "></textarea>
     <input type="submit" value="Submit">
   </form>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

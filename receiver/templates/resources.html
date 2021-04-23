@@ -53,8 +53,8 @@
             <p>Name: {{post.contact_name}}</p>
             <p>Resource:{{post.resource_name}}
             </p>
-            <p> Web site: <a href="{{post.web_site }} ">{{ post.web_site }}</a> </p>
-            <p>Status:
+            <p> Web site: <a href="{{ post.web_site }} ">{{ post.web_site }}</a> </p>
+            <p>Status: {{ post.description }}
 
             </p>
         </div>
@@ -69,8 +69,8 @@
 <script>
     $("#id_state").change(function () {
         const url = $("#resN").attr("data-cities-url");  // get the url of the `load_cities` view
-        const stateId = $(this).val();  // get the selected state ID from the HTML input
-
+        var stateId = $(this).val() || 0;  // get the selected state ID from the HTML input
+        $("#id_city").val(0)
         $.ajax({                       // initialize an AJAX request
             url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
             data: {
@@ -78,7 +78,6 @@
             },
             success: function (data) {   // `data` is the return of the `load_cities` view function
                 $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
-
                 /*
                 let html_data = '<option value="">---------</option>';
                 data.forEach(function (city) {
@@ -96,13 +95,18 @@
 
     $("#id_state").change(function () {
         const url = $("#resN").attr("post-cards-url");  // get the url of the `load_cities` view
-        const stateId = $(this).val();  // get the selected state ID from the HTML input
-
+        var stateId = $(this).val() || 0;  // get the selected state ID from the HTML input
+        var resource_nameId = $("#id_resource_name").val() || 0;
+        var cityId = $("#id_city").val() || 0;
         $.ajax({                       // initialize an AJAX request
             url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
             data: {
-                'state_id': stateId       // add the state id to the GET parameters
+                'state_id': stateId,
+                'city_id': cityId,
+                'resource_name_id': resource_nameId       // add the state id to the GET parameters
+
             },
+
             success: function (data) {   // `data` is the return of the `load_cities` view function
                 $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
 
@@ -113,12 +117,15 @@
 
     $("#id_city").change(function () {
         const url = $("#resN").attr("post-cards-url");  // get the url of the `load_cities` view
-        const cityId = $(this).val();  // get the selected state ID from the HTML input
-
+        var cityId = $(this).val() || 0;  // get the selected state ID from the HTML input
+        var stateId = $("#id_state").val() || 0;
+        var resource_nameId = $("#id_resource_name").val() || 0;
         $.ajax({                       // initialize an AJAX request
             url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
             data: {
-                'city_id': cityId       // add the state id to the GET parameters
+                'state_id': stateId,
+                'city_id': cityId,
+                'resource_name_id': resource_nameId        // add the state id to the GET parameters
             },
             success: function (data) {   // `data` is the return of the `load_cities` view function
                 $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
@@ -130,9 +137,9 @@
 
     $("#id_resource_name").change(function () {
         const url = $("#resN").attr("post-cards-url");  // get the url of the `load_cities` view
-        var stateId = $("#id_state").val();
-        var cityId = $("#id_city").val();
-        const resource_nameId = $(this).val();  // get the selected state ID from the HTML input
+        var stateId = $("#id_state").val() || 0;
+        var cityId = $("#id_city").val() || 0;
+        var resource_nameId = $(this).val();  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request
             url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
@@ -160,7 +167,6 @@
             },
             success: function (data) {   // `data` is the return of the `load_cities` view function
                 $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
-
             }
         });
     });
