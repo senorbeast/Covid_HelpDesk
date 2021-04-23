@@ -33,8 +33,10 @@ class City(models.Model):
 
 class Resource(models.Model):
     contact_name = models.CharField(default='', max_length=200)
-    email_id = models.CharField(default='', max_length=200)
-    web_site = models.CharField(default='', max_length=200)
+    email_id = models.CharField(
+        default='', max_length=200, blank=True, null=True)
+    web_site = models.CharField(
+        default='', max_length=200, blank=True, null=True)
     phone = models.CharField(default='', max_length=200)
     #qty: models.CharField(default='', max_length=200)
     state = models.ForeignKey(
@@ -50,7 +52,7 @@ class Resource(models.Model):
     updated_at = models.DateField(auto_now=True)
 
     def __str__(self):
-        return f"{self.contact_name}, ID: {str(self.id)} "
+        return self.contact_name
 
 
 class Needy(models.Model):

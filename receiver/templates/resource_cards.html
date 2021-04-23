@@ -21,9 +21,8 @@
         <p>Resource:{{post.resource_name}}
         </p>
         <p> Web site: <a href="{{ post.web_site }} ">{{ post.web_site }}</a> </p>
-        <p>Status: {{ post.description }}
-
-        </p>
+        <p>Status: {{ post.description }}</p>
+        <p> Updated at : {{ post.updated_at }} </p>
     </div>
     {% if user.is_authenticated %}
 

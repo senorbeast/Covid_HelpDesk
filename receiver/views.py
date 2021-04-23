@@ -48,7 +48,7 @@ def newPostCards(request):  # For filtering with AJAX
 
 
 def resources(request):
-    posts = Resource.objects.all()
+    posts = Resource.objects.all().order_by('-verified')
     pf_new = Res_filt()
     if request.method == "POST":
         pf = Res_filt(request.POST)
@@ -61,7 +61,7 @@ def newResCards(request):  # For filtering with AJAX
     city_id = request.GET.get('city_id')
     resource_name_id = request.GET.get('resource_name_id')
     show_all_id = request.GET.get('show_all_id')
-    res = Resource.objects.all()
+    res = Resource.objects.all().order_by('-verified')
     if int(state_id) != 0:
         res = res.filter(state_id=state_id)
     if int(city_id) != 0:
@@ -160,7 +160,7 @@ def editResource(request, pk):
         web_site = res.web_site
         phone = res.phone
         verified = res.verified
-        desc = res.description
+        description = res.description
 
         context = {
             'name': name,
@@ -168,7 +168,7 @@ def editResource(request, pk):
             'email': email,
             'web_site': web_site,
             'phone': phone,
-            'desc': desc,
+            'description': description,
             'verified': verified,
         }
 
