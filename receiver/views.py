@@ -34,13 +34,16 @@ def newPostCards(request):  # For filtering with AJAX
     state_id = request.GET.get('state_id')
     needies = Needy.objects.filter(state_id=state_id).all()
     city_id = request.GET.get('city_id')
-    if city_id:
-        needies = Needy.objects.filter(city_id=city_id).all()
     resource_name_id = request.GET.get('resource_name_id')
-    if resource_name_id:
-        needies = Needy.objects.filter(resource_name_id=resource_name_id).all()
     show_all_id = request.GET.get('show_all_id')
-    if show_all_id:
+    if city_id and state_id and resource_name_id:
+        needies = Needy.objects.filter(state_id=state_id).filter(
+            city_id=city_id).filter(resource_name_id=resource_name_id)
+    elif city_id:
+        needies = Needy.objects.filter(city_id=city_id).all()
+    elif resource_name_id:
+        needies = Needy.objects.filter(resource_name_id=resource_name_id).all()
+    elif show_all_id:
         needies = Needy.objects.get.all()
     return render(request, 'posts_cards.html', {'posts': needies})
 
@@ -58,23 +61,25 @@ def resources(request):
 
 def newResCards(request):  # For filtering with AJAX
     state_id = request.GET.get('state_id')
+    res = Resource.objects.filter(state_id=state_id).all()
     city_id = request.GET.get('city_id')
     resource_name_id = request.GET.get('resource_name_id')
-    print(state_id, city_id, resource_name_id)
-    res = Resource.objects.filter(state_id=state_id).all()
-    if city_id:
-        res = Resource.objects.filter(city_id=city_id).all()
-    if resource_name_id:
-        res = Resource.objects.filter(resource_name_id=resource_name_id).all()
     show_all_id = request.GET.get('show_all_id')
-    if show_all_id:
+    if city_id and state_id and resource_name_id:
+        res = Resource.objects.filter(state_id=state_id).filter(
+            city_id=city_id).filter(resource_name_id=resource_name_id)
+    elif city_id:
+        res = Resource.objects.filter(city_id=city_id).all()
+    elif resource_name_id:
+        res = Resource.objects.filter(resource_name_id=resource_name_id).all()
+    elif show_all_id:
         res = Resource.objects.get.all()
     return render(request, 'resource_cards.html', {'posts': res})
+
 
 # ! Reloading after submiting adds duplicates in DB
 
 # Helping hand, adds a resource
-
 
 def add_source(request):
     # res_type = enumerate(res_type)

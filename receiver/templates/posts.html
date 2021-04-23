@@ -44,9 +44,9 @@
             <p>Name: {{post.name}}</p>
             <p>Requirement:{{post.resource_name}}
             </p>
-            <p>Status: </p>
+            <!-- <p>Status: </p> -->
         </div>
-        
+
     </div>
     {% endfor %}
 </div>
@@ -114,11 +114,15 @@
     //* Resource Select
     $("#id_resource_name").change(function () {
         const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
+        var stateId = $("#id_state").val();
+        var cityId = $("#id_city").val();
         const resource_nameId = $(this).val();  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request
             url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
             data: {
+                'state_id': stateId,
+                'city_id': cityId,
                 'resource_name_id': resource_nameId       // add the state id to the GET parameters
             },
             success: function (data) {   // `data` is the return of the `load_cities` view function

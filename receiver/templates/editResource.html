@@ -17,7 +17,7 @@
     <label for="email_idn">Email ID</label>
     <input type="text" id="lname" name="email_id" placeholder="Enter your Email ID" value="{{email}}" required>
     <label for="phone">Contact Number</label>
-    <input type="text" id="contact" name="phone" placeholder="Enter your contact number" value="phone" required>
+    <input type="text" id="contact" name="phone" placeholder="Enter your contact number" value="{{ phone }}" required>
 
     <label for="state">State</label>
     {{ hhm.state }}
@@ -25,6 +25,10 @@
     {{ hhm.city }}
     <label for="res_type">Resource Type</label>
     {{ hhm.resource_name}}
+
+    <label for="phone">Verified</label>
+    <input type="text" id="verif" name="verified" placeholder="Verified ?" value="{{ verified }}" required>
+
 
     <label for="Your Helping Resources">Your Helping Resources</label>
     <textarea id="subject" name="description" placeholder="Please describe how you are providing your help. "

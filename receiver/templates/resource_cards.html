@@ -2,6 +2,17 @@
 <div class="card1">
     <div class="State" style="color: black;">
         <h2>State: {{post.state}}</h2>
+
+        {% if post.verified %}
+        <div class="verified_badge">
+            {% load static %}
+            <img src="{% static 'images/correct.png' %}" width="40em" height="40em" alt="">
+            <!--<div>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+        </div>
+        {% else %}
+        ⛔
+        {% endif %}
+
     </div>
     <div class="container">
         <p>Location:{{post.city}}</p>
@@ -9,19 +20,14 @@
         <p>Name: {{post.contact_name}}</p>
         <p>Resource:{{post.resource_name}}
         </p>
-        <p> Web site:{{ post.web_site }} </p>
-        <p>Status: {% if post.verified %}
-            Verified
-            {% else %}
-            Not Verified
-            {% endif %}
+        <p> Web site: <a href="{{post.web_site }} ">{{ post.web_site }}</a> </p>
+        <p>Status:
 
         </p>
     </div>
     {% if user.is_authenticated %}
-    <div><a href="{% url 'editResource' post.id %}">EDIT</a></div>
-    <div><a href="{% url 'deleteResource' post.id %}">DELETE</a></div>
-
+    <div><a href="{% url 'editResource' post.id %}"><button class="Edit">Edit</button></a></div>
+    <div><a href="{% url 'deleteResource' post.id %}"><button class="Delete">Delete</button></a></div>
     {% endif %}
 </div>
 {% endfor %}

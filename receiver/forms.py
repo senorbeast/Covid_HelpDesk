@@ -8,7 +8,7 @@ class HelpForm(forms.ModelForm):
     class Meta:
         model = Resource
         fields = ['contact_name', 'email_id',
-                  'phone', 'state', 'city', 'resource_name', 'description']
+                  'phone', 'state', 'city', 'resource_name', 'verified', 'description']
 
      # Edits default forms.ModelForm to hide the city options till state is selected and
     # then filter cities after selecting state

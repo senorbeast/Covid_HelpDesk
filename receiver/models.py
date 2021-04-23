@@ -50,7 +50,7 @@ class Resource(models.Model):
     updated_at = models.DateField(auto_now=True)
 
     def __str__(self):
-        return self.contact_name
+        return f"{self.contact_name}, ID: {str(self.id)} "
 
 
 class Needy(models.Model):
@@ -67,7 +67,7 @@ class Needy(models.Model):
     created_at = models.DateTimeField(default=timezone.now, auto_created=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}, ID: {str(self.id)} "
 
     def was_published_recently(self):
         return (f"{self.pub_date >= timezone.now() - datetime.timedelta(days=1)}")
