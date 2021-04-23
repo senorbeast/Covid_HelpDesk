@@ -59,8 +59,9 @@
             </p>
         </div>
         {% if user.is_authenticated %}
-        <div><a href="{% url 'editResource' post.id %}"><button class="Edit">Edit</button></a></div>
-        <div><a href="{% url 'deleteResource' post.id %}"><button class="Delete">Delete</button></a></div>
+        <div class="EdDelVer"><a href="{% url 'editResource' post.id %}"><button class="Edit">Edit</button></a></div>
+        <div class="EdDelVer"><a href="{% url 'deleteResource' post.id %}"><button class="Delete">Delete</button></a>
+        </div>
         {% endif %}
     </div>
     {% endfor %}

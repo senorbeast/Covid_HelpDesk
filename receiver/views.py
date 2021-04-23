@@ -157,6 +157,7 @@ def editResource(request, pk):
         hhm = HelpForm(instance=res)
         name = res.contact_name
         email = res.email_id
+        web_site = res.web_site
         phone = res.phone
         verified = res.verified
         desc = res.description
@@ -165,8 +166,10 @@ def editResource(request, pk):
             'name': name,
             'hhm': hhm,
             'email': email,
+            'web_site': web_site,
             'phone': phone,
             'desc': desc,
+            'verified': verified,
         }
 
         return render(request, 'editResource.html', context)
