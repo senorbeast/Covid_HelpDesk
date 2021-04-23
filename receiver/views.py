@@ -32,11 +32,10 @@ def posts(request):
 
 def newPostCards(request):  # For filtering with AJAX
     state_id = request.GET.get('state_id')
-    needies = Needy.objects.filter(state_id=state_id).all()
     city_id = request.GET.get('city_id')
     resource_name_id = request.GET.get('resource_name_id')
     show_all_id = request.GET.get('show_all_id')
-    needies = Resource.objects.all()
+    needies = Needy.objects.all()
     if int(state_id) != 0:
         needies = needies.filter(state_id=state_id)
     if int(city_id) != 0:

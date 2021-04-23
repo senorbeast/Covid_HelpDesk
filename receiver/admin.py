@@ -27,7 +27,7 @@ class ViewAdmin(ImportExportModelAdmin):
     list_display = ['id', 'contact_name', 'state', 'city', 'resource_name']
     list_filter = ('state', "city", 'resource_name', 'verified')
     search_fields = ['contact_name']
-    #autocomplete_fields = ['city']
+    autocomplete_fields = ['city']
 
 
 @admin.register(State)
