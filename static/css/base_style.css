@@ -8,14 +8,20 @@ head {
     background-color: #fffcf3;
     /* height: auto; */
 }
-
+.heading {
+    font-size: 2rem;
+    font-family: "Oxygen", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .header {
     display: flex;
     background-color: rgb(216, 216, 216);
     /* padding: 8px 8px; */
     font-family: "Oxygen", sans-serif;
     height: 5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-right: 10px;
 }
 
@@ -49,20 +55,22 @@ head {
     justify-content: center;
     align-items: center;
 }
-/* 
+
 .logo {
-    height: 4rem;
-} */
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
 
 .main-content {
     /* To get footer in place (bad way) */
-    min-height: calc(100vh - 10rem);
+    min-height: calc(100vh - 11rem);
 }
 .footer {
     position: relative;
     left: 0;
     bottom: 0;
-    height: 5rem;
+    height: 6rem;
     background-color: rgb(198, 205, 207);
     color: rgb(26, 26, 26);
     text-align: center;
@@ -88,5 +96,8 @@ head {
         bottom: 0;
 
         font-size: 8px;
+    }
+    .heading {
+        display: none;
     }
 }
