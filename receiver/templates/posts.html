@@ -124,7 +124,7 @@
         const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
         var stateId = $("#id_state").val() || 0;
         var cityId = $("#id_city").val() || 0;
-        var resource_nameId = $(this).val();  // get the selected state ID from the HTML input
+        var resource_nameId = $(this).val() || 0;  // get the selected state ID from the HTML input
 
         $.ajax({                       // initialize an AJAX request
             url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
@@ -141,20 +141,26 @@
     });
 
     //* Show All
-    $("#show_all").change(function () {
-        const url = $("#postN").attr("post-cards-url");  // get the url of the `load_cities` view
-        const show_allId = $(this).val();  // get the selected state ID from the HTML input
-
-        $.ajax({                       // initialize an AJAX request
-            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+    $("#show_all").click(function (e) {
+        const url = $("#postN").attr("post-cards-url");
+        e.preventDefault();
+        $.ajax({
+            url: url,
             data: {
-                'show_all_id': show_allId       // add the state id to the GET parameters
+                'state_id': 0,
+                'city_id': 0,
+                'resource_name_id': 0
             },
-            success: function (data) {   // `data` is the return of the `load_cities` view function
-                $("#post_cards").html(data);  // replace the contents of the city input with the data that came from the server
+            success: function (data) {
+                $("#post_cards").html(data);
+                $("#id_resource_name").val(0);
+                $("#id_city").val(0);
+                $("#id_state").val(0);
+
             }
         });
     });
+
 
 </script>
 {% endblock %}
