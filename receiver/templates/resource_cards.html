@@ -28,6 +28,7 @@
                 <a href="{% url 'deleteResource' post.id %}"  style="text-decoration: none;"><button class="Delete">Delete</button></a>
             </div>
             {% endif %}
+        <p> Updated at : {{ post.updated_at }} </p>
     </div>
 </div>
 {% endfor %}
