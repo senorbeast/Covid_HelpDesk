@@ -22,13 +22,16 @@
         </p>
         <p> Web site: <a href="{{ post.web_site }} ">{{ post.web_site }}</a> </p>
         <p>Status: {{ post.description }}</p>
-            {% if user.is_authenticated %}
-            <div class="EdDelVer">
-                <a href="{% url 'editResource' post.id %}" style="text-decoration: none;"><button class="Edit">Edit</button></a>
-                <a href="{% url 'deleteResource' post.id %}"  style="text-decoration: none;"><button class="Delete">Delete</button></a>
-            </div>
-            {% endif %}
         <p> Updated at : {{ post.updated_at }} </p>
+        {% if user.is_authenticated %}
+        <div class="EdDelVer">
+            <a href="{% url 'editResource' post.id %}" style="text-decoration: none;"><button
+                    class="Edit">Edit</button></a>
+            <a href="{% url 'deleteResource' post.id %}" style="text-decoration: none;"><button
+                    class="Delete">Delete</button></a>
+        </div>
+        {% endif %}
+
     </div>
 </div>
 {% endfor %}
