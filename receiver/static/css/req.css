@@ -110,9 +110,9 @@ input[type="submit"]:hover {
         margin: 30px;
     }
     .container {
-        width: 50%;
+        width: 75%;
         margin-top: 80px;
-        background-color: rgba(5, 48, 73, 0.87);
+        background-color: rgba(3, 84, 121, 0.87);
     }
 
     .credits span {

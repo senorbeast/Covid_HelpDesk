@@ -69,7 +69,7 @@
     cursor: pointer;
 }
 
-#CommonResources:hover {
+#CommonResources:hover, #show_all:hover {
     background-color: #adadad;
     color: rgb(0, 0, 0);
     transition: 0.2s;
