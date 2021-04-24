@@ -1,18 +1,18 @@
 {% for post in posts %}
 <div class="card1">
-    <div class="State" style="color: black;">
+    <div class="State">
         <h2>State: {{post.state}}</h2>
 
         {% if post.verified %}
         <div class="verified_badge">
             {% load static %}
-            <img src="{% static 'images/correct.png' %}" width="40em" height="40em" alt="">
+            <img src="{% static 'images/correct.png' %}" style="width: 35px; height: 35px;" alt="">
             <!--<div>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
         </div>
         {% else %}
+        <br>
         ⛔
         {% endif %}
-
     </div>
     <div class="container">
         <p>Location:{{post.city}}</p>
@@ -21,14 +21,13 @@
         <p>Resource:{{post.resource_name}}
         </p>
         <p> Web site: <a href="{{ post.web_site }} ">{{ post.web_site }}</a> </p>
-        <p>Status: {{ post.description }}
-
-        </p>
+        <p>Status: {{ post.description }}</p>
+            {% if user.is_authenticated %}
+            <div class="EdDelVer">
+                <a href="{% url 'editResource' post.id %}" style="text-decoration: none;"><button class="Edit">Edit</button></a>
+                <a href="{% url 'deleteResource' post.id %}"  style="text-decoration: none;"><button class="Delete">Delete</button></a>
+            </div>
+            {% endif %}
     </div>
-    {% if user.is_authenticated %}
-
-    <div class="EdDelVer"><a href="{% url 'editResource' post.id %}"><button class="Edit">Edit</button></a></div>
-    <div class="EdDelVer"><a href="{% url 'deleteResource' post.id %}"><button class="Delete">Delete</button></a></div>
-    {% endif %}
 </div>
 {% endfor %}
