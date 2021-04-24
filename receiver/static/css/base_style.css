@@ -55,10 +55,12 @@ head {
     justify-content: center;
     align-items: center;
 }
-/* 
+
 .logo {
-    height: 4rem;
-} */
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
 
 .main-content {
     /* To get footer in place (bad way) */
