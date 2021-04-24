@@ -37,7 +37,7 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid rgba(9, 59, 88, 0.87);
+    border: 1px solid rgb(3, 83, 121);
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
@@ -63,7 +63,7 @@ textarea {
 input[type="submit"] {
     font-family: Oxygen;
     font-size: 15px;
-    background-color: #0ace5c;
+    background-color: #00bd4f;
     color: rgb(0, 0, 0);
     padding: 12px 20px;
     border: none;
@@ -81,7 +81,7 @@ input[type="submit"]:hover {
     font-size: 17px;
     border-radius: 10px;
     box-shadow: 0 5px 1rem rgb(92, 92, 92);
-    background-color: rgba(5, 48, 73, 0.87);
+    background-color: rgba(3, 84, 121, 0.87);
     color: rgb(241, 241, 241);
     margin: 5% auto 15% auto;
     width: 40%;
@@ -96,8 +96,8 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 1300px) {
     body {
-        background-image: url("../images/fbwide.jpg");
-        height: 100vh;
+        background-image: url("../images/reqn.jpg");
+        height: 100%;
         background-color: rgba(114, 173, 240, 0.87);
     }
     .container {
@@ -108,5 +108,11 @@ input[type="submit"]:hover {
 
     .credits {
         margin-left: 75%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 75%;
     }
 }

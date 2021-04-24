@@ -1,21 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Red+Hat+Display:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
 body,
 head {
-    height: 100%;
     padding: 0;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fffcf3;
     max-width: calc(100%-20px);
+    height:auto;
 }
 
 .header {
     overflow: hidden;
-    background-color: rgb(185, 185, 185);
-    padding: 20px 10px;
+    background-color: rgb(216, 216, 216);
+    padding: 8px 8px;
     margin-bottom: 20px;
     font-family: "Oxygen", sans-serif;
     overflow-x: hidden;
+}
+
+.header p{
+    font-family: 'Philosopher', sans-serif;
+    text-align:center;
+    font-size: 60px;
+    flex: 60%;
+    margin-bottom: -8px;
+    margin-top: 13px;
 }
 
 .header a {
@@ -35,20 +45,33 @@ head {
 }
 
 .header a:hover {
-    background-color: #ddd;
+    background-color: rgb(241, 241, 241);
     color: black;
     transition: 0.4s;
 }
 
 .header-right {
-    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width: 180px;
+    height:auto;
 }
 
 .footer {
+    position:relative;
     left: 0;
     bottom: 0;
     width: calc(100%-20px);
-    background-color: rgb(187, 187, 187);
+    background-color: rgb(198, 205, 207);
     color: rgb(26, 26, 26);
     text-align: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -60,12 +83,22 @@ head {
     body {
         margin: 0px;
         padding: 0px;
-        background-color: rgb(29, 29, 29);
         justify-content: center;
         max-width: 100%;
         overflow-x: hidden;
     }
     .contact {
         font-size: 30px;
+    }
+
+    .footer {
+        left: 0;
+        bottom: 0;
+        width: calc(100%-20px);
+        font-size: 8px;
+        padding: 10px;
+    }
+    .header p{
+        font-size: 40px;
     }
 }

@@ -139,3 +139,9 @@ input[type="submit"]:hover {
         content: "Photo by Daria Liudnaya from Pexels";
     }
 }
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 75%;
+    }
+}

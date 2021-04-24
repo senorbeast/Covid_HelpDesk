@@ -23,13 +23,14 @@ html {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
+
 }
 
 .about-section {
     padding: 50px;
     text-align: center;
-    background-color: rgb(202, 103, 11);
-    color: white;
+    background-color: rgb(3, 83, 121);
+    color: rgb(240, 240, 240);
 }
 
 .container {
@@ -47,41 +48,74 @@ html {
     color: grey;
 }
 
-.button {
+button {
     border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
     color: white;
-    background-color: rgb(233, 123, 21);
+    padding: 15px 32px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
     cursor: pointer;
-    width: 100%;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #00848d;
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: #00595f;
 }
 
 .col-container {
-    display: table; /* Make the container element behave like a table */
+    display: grid; /* Make the container element behave like a table */
+    grid-template-columns: auto auto auto auto;
+    grid-gap:10px;
     width: 100%; /* Set full-width to expand the whole page */
-
-    padding: 0 16px;
+    padding: 10px;
 }
 
 .col {
     border-radius: 10px;
-    display: table-cell; /* Make elements inside the container behave like table cells */
-    width: 25%;
+    display: grid; /* Make elements inside the container behave like table cells */
+    width: calc(100%-20px);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 20px;
     padding: 20px;
+    margin-bottom: 15px;
 }
 
-@media screen and (max-width: 650px) {
+
+@media screen and (max-width: 1400px) {
+    .col h2{
+        font-size:20px ;
+    }
+}
+
+@media screen and (max-width: 780px) {
     .col {
         width: 100%;
         display: block;
     }
+
+    .col h2{
+        font-size:20px ;
+    }
+
+    .col-container {
+        display: grid; /* Make the container element behave like a table */
+        grid-template-columns: auto ;
+        width: 100%; /* Set full-width to expand the whole page */
+        padding: 16 16px;
+    }
+    
+    .col {
+        border-radius: 10px;
+        display:grid; /* Make elements inside the container behave like table cells */
+        width: 95%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        padding: 20px;
+    }
+    
 }

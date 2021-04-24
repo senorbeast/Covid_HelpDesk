@@ -55,8 +55,8 @@
     padding: 20px;
 }
 
-#CommonResources {
-    height: 80px;
+#CommonResources, #show_all  {
+    width: calc(100%-20px) ;
     background-color: rgb(204, 204, 204);
     border-radius: 10px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -64,7 +64,7 @@
     color: rgb(0, 0, 0);
     text-align: center;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     box-shadow: 0 3px 1rem rgb(0 0 0 / 20%);
     cursor: pointer;
 }
@@ -76,11 +76,12 @@
 }
 
 .whole_card {
-    margin: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .card_title {
@@ -90,7 +91,7 @@
 }
 
 .verified_badge {
-    margin-top: 4%;
+    margin-top: 8%;
 }
 
 .whole_card ul {
@@ -106,7 +107,7 @@
 
 .card1 {
     margin: 10px;
-    width: 100%;
+    width: calc(100%-20px);
     display: flex;
     flex-direction: column;
     border: 1px rgb(211, 211, 211) solid;
@@ -116,7 +117,7 @@
 
 .State {
     height: 78px;
-    background: rgb(235, 185, 79);
+    background: rgb(1, 78, 141);
     color: white;
     text-align: center;
     border-top-right-radius: 15px;
@@ -134,9 +135,11 @@
     border: none;
     color: white;
     padding: 15px 32px;
+    margin: 10px ;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
     font-size: 16px;
     margin: 4px 2px;
     transition-duration: 0.4s;
@@ -169,6 +172,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
+        margin-top: 220px;
     }
 
     .selection_box {
@@ -190,8 +194,8 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
     }
-    #CommonResources {
-        font-size: 25px;
+    #CommonResources, #show_all {
+        font-size: 20px;
     }
     #LabelText {
         font-size: 25px;
@@ -243,13 +247,15 @@
     #CommonResources {
         font-size: 20px;
     }
+    .card1{
+        margin-top: 40px;
+    }
 }
 
 @media only screen and (max-width: 630px) {
     .selection_box {
         height: 150px;
         margin-left: -10px;
-        margin-bottom: 240px;
         font-size: 10px;
         flex-wrap: wrap;
     }
@@ -258,5 +264,12 @@
     }
     .Requirementdropdown {
         font-size: 10px;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .whole_card{
+        margin-top: 480px;
     }
 }
