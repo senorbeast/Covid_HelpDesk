@@ -10,18 +10,20 @@
 
 <body>
     <div class="header">
-        <p>Covid Help Desk</p1>
         <div class="logo">
-            <img src="{% static 'images/LogoMask1.png' %}" alt="">
+            <img src="{% static 'images/LogoMask1.png' %}" style="height: 3.5rem; width:auto;" alt="">
         </div>
-        <div class="header-right">
+        <div class="heading">Covid Help Desk </div>
+        <div class=" header-right">
             <a class="active" href="/">Home</a>
             <a href="/about">About</a>
             <a href="/fbform">Feedback</a>
         </div>
     </div>
-    {% block content %}
-    {% endblock %}
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
     <footer>
         <div class="footer">
             <p class="w">

@@ -1,31 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Red+Hat+Display:wght@400;500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap");
 body,
 head {
-    padding: 0;
+    padding: 0px;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fffcf3;
-    max-width: calc(100%-20px);
-    height:auto;
+    /* height: auto; */
 }
 
 .header {
-    overflow: hidden;
+    display: flex;
     background-color: rgb(216, 216, 216);
-    padding: 8px 8px;
-    margin-bottom: 20px;
+    /* padding: 8px 8px; */
     font-family: "Oxygen", sans-serif;
-    overflow-x: hidden;
-}
-
-.header p{
-    font-family: 'Philosopher', sans-serif;
-    text-align:center;
-    font-size: 60px;
-    flex: 60%;
-    margin-bottom: -8px;
-    margin-top: 13px;
+    height: 5rem;
+    justify-content: space-between;
+    padding-right: 10px;
 }
 
 .header a {
@@ -52,31 +43,32 @@ head {
 
 .header-right {
     display: flex;
+    /* align-self: flex-end; */
+
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
+/* 
+.logo {
+    height: 4rem;
+} */
 
-.logo{
-    display: flex;
-    justify-content: center;
+.main-content {
+    /* To get footer in place (bad way) */
+    min-height: calc(100vh - 10rem);
 }
-
-img{
-    width: 180px;
-    height:auto;
-}
-
 .footer {
-    position:relative;
+    position: relative;
     left: 0;
     bottom: 0;
-    width: calc(100%-20px);
+    height: 5rem;
     background-color: rgb(198, 205, 207);
     color: rgb(26, 26, 26);
     text-align: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 8px;
-    padding: 10px;
+    padding: 1rem;
 }
 @media only screen and (max-width: 780px) {
     head,
@@ -94,11 +86,7 @@ img{
     .footer {
         left: 0;
         bottom: 0;
-        width: calc(100%-20px);
+
         font-size: 8px;
-        padding: 10px;
-    }
-    .header p{
-        font-size: 40px;
     }
 }
