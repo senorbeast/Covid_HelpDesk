@@ -49,7 +49,7 @@ class Resource(models.Model):
 
     verified = models.BooleanField(default=False)
     created_at = models.DateField(default=timezone.now, auto_created=True)
-    updated_at = models.DateField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.contact_name
