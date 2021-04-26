@@ -9,7 +9,8 @@ head {
     /* height: auto; */
 }
 .heading {
-    font-size: 2rem;
+    margin-left: 193px;
+    font-size: 3rem;
     font-family: "Oxygen", sans-serif;
     display: flex;
     justify-content: center;
@@ -57,7 +58,7 @@ head {
 }
 
 .logo {
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
