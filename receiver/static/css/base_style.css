@@ -8,14 +8,16 @@ head {
     background-color: #fffcf3;
     /* height: auto; */
 }
+
 .heading {
     margin-left: 193px;
-    font-size: 3rem;
+    
     font-family: "Oxygen", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .header {
     display: flex;
     background-color: rgb(216, 216, 216);
@@ -37,15 +39,14 @@ head {
     border-radius: 4px;
 }
 
-.header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.header a:hover {
+.header .header-right a:hover {
     background-color: rgb(241, 241, 241);
     color: black;
     transition: 0.4s;
+}
+
+.header .heading a{
+    font-size: 3rem;
 }
 
 .header-right {
