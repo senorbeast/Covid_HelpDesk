@@ -2,9 +2,9 @@
 .Title {
     color: rgb(17, 17, 17);
     align-self: center;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-size: 70px;
-    margin-top: 5px;
+    font-family: Oxygen;
+    font-size: 50px;
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 
@@ -71,7 +71,7 @@
     font-family: 'Noto Serif TC', serif;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 32px;
+    font-size: 25px;
     margin-left: 20px;
 }
 
@@ -79,7 +79,7 @@
 
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 32px;
+    font-size: 30px;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -128,24 +128,31 @@
 
 @media only screen and (max-width: 780px) {
     .contact {
-        font-size: 25px;
+        font-size: 20px;
+    }
+
+    .contact h2 {
+        margin-bottom: -15px;
+        font-size: 27px;
+        margin-top: -10px;
+    }
+
+    .contact a{
+        font-size: 20px;
     }
     .about {
         font-size: 18px;
+    }
+    .Title{
+        font-size: 35px;
     }
 }
 
 @media only screen and (max-width: 550px) {
     .contact h2 {
         margin-bottom: -15px;
-        font-size: 33px;
+        font-size: 27px;
         margin-top: -10px;
-        margin-left: 0px;
-    }
-
-    .contact p {
-        font-size: 20px;
-        margin-left: 0px;
     }
 
     .contact a {
@@ -155,6 +162,7 @@
 
 @media only screen and (max-width: 470px) {
     .contact {
+        width: calc(100% - 170px);
         font-size: 25px;
     }
 
@@ -166,24 +174,30 @@
         justify-content: center;
     }
     .section2 {
+        width: calc(100% - 90px);
         padding-top: -15px;
         padding-bottom: 65px;
     }
 
     .contact h2 {
         margin-bottom: -15px;
-        font-size: 33px;
+        font-size: 27px;
         margin-top: -10px;
-        margin-left: 0px;
-    }
-
-    .contact p {
-        font-size: 20px;
-        margin-left: 0px;
+        margin-left: -3px;
     }
 
     .contact a {
         font-size: 17px;
-        margin-left: -17px ;
+        margin-left: -10px;
+    }
+
+    .contact p{
+        margin-left: 4px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .contact a{
+       font-size: 15px;
     }
 }

@@ -89,7 +89,7 @@ input[type="submit"]:hover {
 .container {
     border-radius: 10px;
     box-shadow: 0 5px 1rem rgb(92, 92, 92);
-    background-color: rgba(3, 84, 121, 0.87);
+    background-color: rgba(0, 53, 78, 0.897);
     color: rgb(241, 241, 241);
     margin: 5% auto 15% auto;
     width: 40%;
@@ -112,7 +112,7 @@ input[type="submit"]:hover {
     .container {
         width: 75%;
         margin-top: 80px;
-        background-color: rgba(3, 84, 121, 0.87);
+        background-color: rgba(0, 53, 78, 0.897);
     }
 
     .credits span {

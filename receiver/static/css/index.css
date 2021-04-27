@@ -19,6 +19,20 @@ html {
     margin-bottom: 16px;
     padding: 0 8px;
 }
+.disclaimer{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-family: Oxygen;
+    background-color: rgb(3, 83, 121);
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: lighter;
+}
+.disclaimer a{
+    color: #4df3ff;
+    text-decoration: none;
+}
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -84,7 +98,6 @@ button {
     padding: 20px;
     margin-bottom: 15px;
 }
-
 
 @media screen and (max-width: 1400px) {
     .col h2{
