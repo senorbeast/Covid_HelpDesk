@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/cards.css' %}" type="text/css" />
+<div class="wholecardsection">
 <div class="selection_box" method="POST" id='resN' data-cities-url="{% url 'ajax_load_cities' %}"
     post-cards-url="{% url 'newresCards'%}">
     {% csrf_token %}
@@ -66,9 +67,9 @@
             </div>
             {% endif %}
         </div>
-
     </div>
     {% endfor %}
+</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>

@@ -1,6 +1,6 @@
 .selection_box {
     width: 100%;
-    height: 100px;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,12 +8,10 @@
 }
 
 .Regiondropdown {
-    margin: 10px;
     padding: 10px;
 }
 
 .Regiondropdown option {
-    margin: 20px;
     padding: 20px;
 }
 
@@ -25,7 +23,6 @@
 }
 
 .Requirementdropdown {
-    margin: 10px;
     padding: 10px;
 }
 
@@ -47,7 +44,6 @@
     font-size: 20px;
 }
 .resources_button {
-    margin: 10px;
     padding: 10px;
 }
 .resources_button button {
@@ -80,8 +76,6 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     margin-bottom: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 .card_title {
@@ -92,13 +86,6 @@
 
 .verified_badge {
     margin-top: 8%;
-}
-
-.whole_card ul {
-    margin-top: -20px;
-    margin-bottom: -20px;
-    padding: 10px;
-    line-height: 1px;
 }
 
 .whole_card p {
@@ -172,11 +159,9 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
-        margin-top: 220px;
     }
 
     .selection_box {
-        margin: 40px;
         font-size: 10px;
         flex-wrap: wrap;
     }
@@ -186,6 +171,7 @@
     .Requirementdropdown {
         font-size: 20px;
     }
+
 }
 
 @media only screen and (max-width: 1080px) {
@@ -218,8 +204,6 @@
 
 @media only screen and (max-width: 1250px) {
     .selection_box {
-        margin-left: -10px;
-        margin-bottom: 150px;
         font-size: 10px;
         flex-wrap: wrap;
     }
@@ -232,9 +216,12 @@
 }
 
 @media only screen and (max-width: 840px) {
+    .wholecardsection{
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+    }
     .selection_box {
-        margin-left: -10px;
-        margin-bottom: 280px;
         font-size: 10px;
         flex-wrap: wrap;
     }
@@ -247,15 +234,10 @@
     #CommonResources {
         font-size: 20px;
     }
-    .card1{
-        margin-top: 40px;
-    }
 }
 
 @media only screen and (max-width: 630px) {
     .selection_box {
-        height: 150px;
-        margin-left: -10px;
         font-size: 10px;
         flex-wrap: wrap;
     }
@@ -266,10 +248,4 @@
         font-size: 10px;
     }
     
-}
-
-@media only screen and (max-width: 400px) {
-    .whole_card{
-        margin-top: 480px;
-    }
 }

@@ -54,7 +54,7 @@
     flex-direction: column;
     width: calc(100% - 530px);
     padding-bottom: 90px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 40px;
 }
 
@@ -99,7 +99,7 @@
         flex-direction: column;
         width: calc(100% - 330px);
         padding-bottom: 90px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         padding: 40px;
     }
 }

@@ -118,8 +118,7 @@ head {
     .footer {
         left: 0;
         bottom: 0;
-
-        font-size: 8px;
+        font-size: 6px;
     }
     .heading {
         display: none;
