@@ -85,7 +85,8 @@
 }
 
 .verified_badge {
-    margin-top: 8%;
+    display: flex;
+    justify-content: center;
 }
 
 .whole_card p {
