@@ -2,7 +2,10 @@
 <div class="card1">
     <div class="State">
         <h2>State: {{post.state}}</h2>
+    </div>
 
+    <div class="container">
+        
         {% if post.verified %}
         <div class="verified_badge">
             {% load static %}
@@ -10,11 +13,8 @@
             <!--<div>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
         </div>
         {% else %}
-        <br>
-        ⛔
+        <div class="verified_badge">⛔</div>
         {% endif %}
-    </div>
-    <div class="container">
         <p>Location:{{post.city}}</p>
         <p>Contact Number:{{post.phone}} </p>
         <p>Name: {{post.contact_name}}</p>
