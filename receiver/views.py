@@ -129,6 +129,13 @@ def about(request):
     return render(request, 'about.html')
 
 
+def disclaimer(request):
+    return render(request, 'disclaimer.html')
+
+
+def privacy(request):
+    return render(request, 'privacy.html')
+
 # For loading filtered cities with AJAX
 
 

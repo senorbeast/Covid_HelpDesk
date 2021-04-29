@@ -12,6 +12,8 @@ urlpatterns = [
     path('addhelp', views.add_source, name='addhelp'),  # Add new resource
     path('fbform', views.fbform, name='fbform'),
     path('about', views.about, name='about'),
+    path('disclaimer', views.disclaimer, name='disclaimer'),
+    path('privacy', views.privacy, name='privacy'),
     path('ajax/load-cities/', views.load_cities,
          name='ajax_load_cities'),  # For filtering cities with AJAX
     path('newpostCards', views.newPostCards,
