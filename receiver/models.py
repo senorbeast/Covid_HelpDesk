@@ -67,7 +67,8 @@ class Needy(models.Model):
         Res_type, default='del', verbose_name="resc_type", on_delete=models.SET_DEFAULT)
     description = models.CharField(max_length=200)
     created_at = models.DateTimeField(default=timezone.now, auto_created=True)
-
+    updated_at = models.DateTimeField(auto_now=True)
+    
     def __str__(self):
         return f"{self.name}, ID: {str(self.id)} "
 

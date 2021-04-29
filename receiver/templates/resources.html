@@ -54,9 +54,9 @@
             <p>Name: {{post.contact_name}}</p>
             <p>Resource:{{post.resource_name}}
             </p>
-            <p> Web site: <a href="{{ post.web_site }} ">{{ post.web_site }}</a> </p>
+            <p>Web site: <a href="{{ post.web_site }} ">{{ post.web_site }}</a> </p>
             <p>Status: {{ post.description }}</p>
-            <p> Updated at : {{ post.updated_at }} </p>
+            <p> Updated at : {{ post.updated_at }}</p>
             {% if user.is_authenticated %}
             <div class="EdDelVer">
                 <a href="{% url 'editResource' post.id %}" style="text-decoration: none;"><button
