@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2(n^*03-c8atnvx%crt^umajvzfn30g$te(u4fl+ws#ctf^lf0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'covidhub.co.in']
+ALLOWED_HOSTS = ['13.71.25.211', 'localhost', 'covidhub.co.in']
 
 # Application definition
 
@@ -76,18 +76,18 @@ WSGI_APPLICATION = 'Covid_HelpDesk.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+    #},
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'postgres',
-    #     'USER': 'postgres',
-    #     'PASSWORD': '65536',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'covidapp',
+         'USER': 'madmax',
+         'PASSWORD': 'madmax123',
+         'HOST': 'localhost',
+         'PORT': '',
+     }
 }
 
 
