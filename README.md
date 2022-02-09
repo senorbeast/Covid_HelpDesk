@@ -8,8 +8,12 @@ Setup project environment with [virtualenv](https://virtualenv.pypa.io) and [pip
 ```bash
 $ virtualenv project-env
 $ source project-env/bin/activate
-$ pip install -r https://raw.githubusercontent.com/senorbeast/Covid_HelpDesk/master/requirements.txt
 $ cd Covid_HelpDesk/
+$ pip install -r requirements.txt
 $ python manage.py migrate
+$ python manage.py collectstatic
 $ python manage.py runserver
 ```
+
+If you face problems, change Debug = True in /Covid_HelpDesk/Covid_HelpDesk/settings.py
+
